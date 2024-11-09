@@ -12,6 +12,8 @@ import android.os.Build;
 import android.util.Log;
 import android.util.SparseLongArray;
 
+import androidx.core.content.ContextCompat;
+
 import com.aefyr.sai.R;
 import com.aefyr.sai.installer.SAIPackageInstaller;
 import com.aefyr.sai.model.apksource.ApkSource;
@@ -64,7 +66,7 @@ public class RootlessSAIPackageInstaller extends SAIPackageInstaller {
     private RootlessSAIPackageInstaller(Context c) {
         super(c);
         mPackageInstaller = getContext().getPackageManager().getPackageInstaller();
-        getContext().registerReceiver(mFurtherInstallationEventsReceiver, new IntentFilter(RootlessSAIPIService.ACTION_INSTALLATION_STATUS_NOTIFICATION));
+        ContextCompat.registerReceiver(getContext(), mFurtherInstallationEventsReceiver, new IntentFilter(RootlessSAIPIService.ACTION_INSTALLATION_STATUS_NOTIFICATION), ContextCompat.RECEIVER_EXPORTED);
         sInstance = this;
     }
 
@@ -93,7 +95,7 @@ public class RootlessSAIPackageInstaller extends SAIPackageInstaller {
             }
 
             Intent callbackIntent = new Intent(getContext(), RootlessSAIPIService.class);
-            PendingIntent pendingIntent = PendingIntent.getService(getContext(), 0, callbackIntent, 0);
+            PendingIntent pendingIntent = PendingIntent.getService(getContext(), 0, callbackIntent, PendingIntent.FLAG_MUTABLE);
             session.commit(pendingIntent.getIntentSender());
         } catch (Exception e) {
             Log.w(TAG, e);

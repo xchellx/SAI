@@ -1,0 +1,138 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.github.aefyr",
+    "module": "flexfilter",
+    "version": "0.9-alpha",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "com.github.aefyr",
+          "module": "flexfilter-config-core",
+          "version": {
+            "requires": "0.9-alpha"
+          }
+        },
+        {
+          "group": "com.github.aefyr",
+          "module": "flexfilter-config-ui",
+          "version": {
+            "requires": "0.9-alpha"
+          }
+        },
+        {
+          "group": "com.github.aefyr",
+          "module": "flexfilter-applier",
+          "version": {
+            "requires": "0.9-alpha"
+          }
+        },
+        {
+          "group": "com.github.aefyr",
+          "module": "flexfilter-builtin",
+          "version": {
+            "requires": "0.9-alpha"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "flexfilter-0.9-alpha.aar",
+          "url": "flexfilter-0.9-alpha.aar",
+          "size": 25354,
+          "sha512": "c152155f75879192c6fb39b20d952960ee16115936e3386c785afafc8447c2e4533e596d696560385472012572aa3dd7090aaa59070b5d5d79c1be143a920bdd",
+          "sha256": "d5d97986e53981dc2099da0d7de0d7cf43e7b968f654dab8a3e794eae57b170e",
+          "sha1": "283e2e4fcd67a4952563c237b9479b7ff6792267",
+          "md5": "db3faf459475d70b4166ec90a224ef21"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.github.aefyr",
+          "module": "flexfilter-config-core",
+          "version": {
+            "requires": "0.9-alpha"
+          }
+        },
+        {
+          "group": "com.github.aefyr",
+          "module": "flexfilter-config-ui",
+          "version": {
+            "requires": "0.9-alpha"
+          }
+        },
+        {
+          "group": "com.github.aefyr",
+          "module": "flexfilter-applier",
+          "version": {
+            "requires": "0.9-alpha"
+          }
+        },
+        {
+          "group": "com.github.aefyr",
+          "module": "flexfilter-builtin",
+          "version": {
+            "requires": "0.9-alpha"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "flexfilter-0.9-alpha.aar",
+          "url": "flexfilter-0.9-alpha.aar",
+          "size": 25354,
+          "sha512": "c152155f75879192c6fb39b20d952960ee16115936e3386c785afafc8447c2e4533e596d696560385472012572aa3dd7090aaa59070b5d5d79c1be143a920bdd",
+          "sha256": "d5d97986e53981dc2099da0d7de0d7cf43e7b968f654dab8a3e794eae57b170e",
+          "sha1": "283e2e4fcd67a4952563c237b9479b7ff6792267",
+          "md5": "db3faf459475d70b4166ec90a224ef21"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "flexfilter-0.9-alpha-sources.jar",
+          "url": "flexfilter-0.9-alpha-sources.jar",
+          "size": 907,
+          "sha512": "169341c57fc14dd3cf56bc12f1e79822bfd309c45f4867dd0d1c736e1bfee980f92d2c7dcf5760b14d897104d82b986abfd62cb95c8530fab3f0f3657943ea5a",
+          "sha256": "b2513d215a5cd48a962567d18331a8f3d96637ef76aa6f28dfd59ba78c16d3e9",
+          "sha1": "734de37b442b059ffb7ce4c511987a8c0fa68ddf",
+          "md5": "e0de0ae8edee63465ba97e1554096f8f"
+        }
+      ]
+    }
+  ]
+}

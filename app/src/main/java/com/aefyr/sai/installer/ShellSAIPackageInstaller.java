@@ -10,6 +10,8 @@ import android.os.Build;
 import android.util.Log;
 import android.util.Pair;
 
+import androidx.core.content.ContextCompat;
+
 import com.aefyr.sai.BuildConfig;
 import com.aefyr.sai.R;
 import com.aefyr.sai.model.apksource.ApkSource;
@@ -18,6 +20,7 @@ import com.aefyr.sai.utils.DbgPreferencesHelper;
 import com.aefyr.sai.utils.Logs;
 import com.aefyr.sai.utils.MiuiUtils;
 import com.aefyr.sai.utils.PreferencesHelper;
+import com.aefyr.sai.utils.PreferencesValues;
 import com.aefyr.sai.utils.Utils;
 
 import java.util.ArrayList;
@@ -65,7 +68,7 @@ public abstract class ShellSAIPackageInstaller extends SAIPackageInstaller {
         super(c);
         IntentFilter packageAddedFilter = new IntentFilter(Intent.ACTION_PACKAGE_ADDED);
         packageAddedFilter.addDataScheme("package");
-        getContext().registerReceiver(mPackageInstalledBroadcastReceiver, packageAddedFilter);
+        ContextCompat.registerReceiver(getContext(), mPackageInstalledBroadcastReceiver, packageAddedFilter, ContextCompat.RECEIVER_EXPORTED);
     }
 
     @SuppressLint("DefaultLocale")
@@ -133,8 +136,10 @@ public abstract class ShellSAIPackageInstaller extends SAIPackageInstaller {
             commandsToAttempt.add(new Shell.Command(command, args.toArray(new String[0])));
             Logs.d(TAG, "Using custom install-create command: " + customInstallCreateCommand);
         } else {
-            commandsToAttempt.add(new Shell.Command("pm", "install-create", "-r", "--install-location", installLocation, "-i", getShell().makeLiteral(BuildConfig.APPLICATION_ID)));
-            commandsToAttempt.add(new Shell.Command("pm", "install-create", "-r", "-i", getShell().makeLiteral(BuildConfig.APPLICATION_ID)));
+            final String allowDowngradingParam = PreferencesHelper.getInstance(getContext()).getInstaller() == PreferencesValues.INSTALLER_ROOTED && PreferencesHelper.getInstance(getContext()).shouldAllowDowngrading() ? "-d" : "";
+            final String bypassDepSdkParam = PreferencesHelper.getInstance(getContext()).getInstaller() != PreferencesValues.INSTALLER_ROOTLESS && PreferencesHelper.getInstance(getContext()).shouldBypassDeprecatedSdkInstalls() ? "--bypass-low-target-sdk-block" : "";
+            commandsToAttempt.add(new Shell.Command("pm", "install-create", allowDowngradingParam, bypassDepSdkParam, "-r", "--install-location", installLocation, "-i", getShell().makeLiteral(BuildConfig.APPLICATION_ID)));
+            commandsToAttempt.add(new Shell.Command("pm", "install-create", allowDowngradingParam, bypassDepSdkParam, "-r", "-i", getShell().makeLiteral(BuildConfig.APPLICATION_ID)));
         }
 
 

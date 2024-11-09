@@ -1,0 +1,78 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.github.aefyr",
+    "module": "pseudoapksigner",
+    "version": "1.6",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "pseudoapksigner-1.6.aar",
+          "url": "pseudoapksigner-1.6.aar",
+          "size": 19627,
+          "sha512": "770f033761272b18d0e0ee38f248d43f4d0c71da7be9a8a88a85669a972b14e1b8c2bef8912105794f975adb9dfa1440c9072a24f2525c6b715f39d15f872c62",
+          "sha256": "c1a3865c525334afc85ecc002fb2c92b2df2779571008f109eeac2abc2fa5f7d",
+          "sha1": "cabdedee8d8502e4c6ce5822280d9dfea0cc8f26",
+          "md5": "693b7b0aeb18d887ca780660df0d790b"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "pseudoapksigner-1.6.aar",
+          "url": "pseudoapksigner-1.6.aar",
+          "size": 19627,
+          "sha512": "770f033761272b18d0e0ee38f248d43f4d0c71da7be9a8a88a85669a972b14e1b8c2bef8912105794f975adb9dfa1440c9072a24f2525c6b715f39d15f872c62",
+          "sha256": "c1a3865c525334afc85ecc002fb2c92b2df2779571008f109eeac2abc2fa5f7d",
+          "sha1": "cabdedee8d8502e4c6ce5822280d9dfea0cc8f26",
+          "md5": "693b7b0aeb18d887ca780660df0d790b"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "pseudoapksigner-1.6-sources.jar",
+          "url": "pseudoapksigner-1.6-sources.jar",
+          "size": 12921,
+          "sha512": "846cba4265fcace1830d7027ce15a1cb40bb1497e011633d60c8c1474262c94f5a6099a7cb5a8793714d917b72cc5288285b2a9b89371519749e2b65d7ed850d",
+          "sha256": "7a4084d55ab2651113e5e88cdc6f4f9b2ad4ed5ee78906fb15665a47a5d1e569",
+          "sha1": "58c83f496956dc939c511edacc3b09b7873d8fd0",
+          "md5": "d63c6a646088fd7ac8f1a2e8c78b5bc5"
+        }
+      ]
+    }
+  ]
+}

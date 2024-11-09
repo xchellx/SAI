@@ -1,0 +1,87 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.github.aefyr",
+    "module": "flexfilter-config-core",
+    "version": "0.9-alpha",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "flexfilter-config-core-0.9-alpha.aar",
+          "url": "flexfilter-config-core-0.9-alpha.aar",
+          "size": 5308,
+          "sha512": "a1f520a7acfad2c7cb3172e985d8e86b598db7181dab29a942c0f2c4dcadc3faa17f1bf25537cdd71d3416a3463ed923e5b80ae7a35a9c23cb0ac5b9d7e9ab0e",
+          "sha256": "adc5181acc0d2c1b0c7dd2eeb6558bf0180fcb5c82d4e4cc919b99f8f8ed7598",
+          "sha1": "56bd79c85ca2ca265335b051bcfbc00cd17e47a5",
+          "md5": "35b06114928e2341b663f869fd7d3fab"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "flexfilter-config-core-0.9-alpha.aar",
+          "url": "flexfilter-config-core-0.9-alpha.aar",
+          "size": 5308,
+          "sha512": "a1f520a7acfad2c7cb3172e985d8e86b598db7181dab29a942c0f2c4dcadc3faa17f1bf25537cdd71d3416a3463ed923e5b80ae7a35a9c23cb0ac5b9d7e9ab0e",
+          "sha256": "adc5181acc0d2c1b0c7dd2eeb6558bf0180fcb5c82d4e4cc919b99f8f8ed7598",
+          "sha1": "56bd79c85ca2ca265335b051bcfbc00cd17e47a5",
+          "md5": "35b06114928e2341b663f869fd7d3fab"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "flexfilter-config-core-0.9-alpha-sources.jar",
+          "url": "flexfilter-config-core-0.9-alpha-sources.jar",
+          "size": 3275,
+          "sha512": "1c75b4e1cd87e9ff382f44b308e422c15fb948bf50b8b4f45848726e4548ebd1fe7754d2129cc7dbca18f19ebdc42eeb5845c769a25eb60d91666cf3d7feefbe",
+          "sha256": "8a3c425adaefb48d40958cca62e5bac12c8fef728499ca2c4f077da40c5e8301",
+          "sha1": "93624e2a105bc5db39c8326799be8cda0f5bbef8",
+          "md5": "a98821a5843a1180bb519293e3aaed7a"
+        }
+      ]
+    }
+  ]
+}

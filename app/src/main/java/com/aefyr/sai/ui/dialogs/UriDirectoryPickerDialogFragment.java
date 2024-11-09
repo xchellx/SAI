@@ -56,7 +56,7 @@ public class UriDirectoryPickerDialogFragment extends SingleChoiceListDialogFrag
     }
 
     private void openFilePicker(FilePickerDialogFragment filePicker) {
-        if (!PermissionsUtils.checkAndRequestStoragePermissions(this)) {
+        if (!PermissionsUtils.checkAndRequestStoragePermissions(this) || !PermissionsUtils.requestManageStoragePerm(this)) {
             mPendingFilePicker = filePicker;
             return;
         }
@@ -67,7 +67,7 @@ public class UriDirectoryPickerDialogFragment extends SingleChoiceListDialogFrag
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        if (requestCode == PermissionsUtils.REQUEST_CODE_STORAGE_PERMISSIONS) {
+        if (requestCode == PermissionsUtils.REQUEST_CODE_STORAGE_PERMISSIONS || requestCode == PermissionsUtils.REQUEST_CODE_MANAGE_STORAGE) {
             if (grantResults.length == 0 || grantResults[0] == PackageManager.PERMISSION_DENIED)
                 AlertsUtils.showAlert(this, R.string.error, R.string.permissions_required_storage);
             else {
@@ -93,6 +93,8 @@ public class UriDirectoryPickerDialogFragment extends SingleChoiceListDialogFrag
 
             onDirectoryPicked(backupDirUri);
         }
+
+        PermissionsUtils.handleManageStoragePerm(this, requestCode);
     }
 
     private void onDirectoryPicked(Uri dirUri) {

@@ -155,4 +155,12 @@ public class PreferencesHelper {
         mPrefs.edit().putBoolean(PreferencesKeys.BACKUP_APK_EXPORT, enabled).apply();
     }
 
+    public boolean shouldBypassDeprecatedSdkInstalls() {
+        return mPrefs.getBoolean(PreferencesKeys.BYPASS_DEPRECATED_SDK_INSTALLS, false);
+    }
+
+    public boolean shouldAllowDowngrading() {
+        return mPrefs.getBoolean(PreferencesKeys.ALLOW_DOWNGRADING, false);
+    }
+
 }

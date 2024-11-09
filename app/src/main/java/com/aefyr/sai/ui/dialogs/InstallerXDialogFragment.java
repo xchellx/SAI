@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.LayoutInflater;
@@ -182,7 +183,7 @@ public class InstallerXDialogFragment extends BaseBottomSheetDialogFragment impl
     }
 
     private void checkPermissionsAndPickFiles() {
-        if (!PermissionsUtils.checkAndRequestStoragePermissions(this)) {
+        if (!PermissionsUtils.checkAndRequestStoragePermissions(this) || !PermissionsUtils.requestManageStoragePerm(this)) {
             mActionAfterGettingStoragePermissions = PICK_WITH_INTERNAL_FILEPICKER;
             return;
         }
@@ -202,7 +203,7 @@ public class InstallerXDialogFragment extends BaseBottomSheetDialogFragment impl
 
     private void pickFilesWithSaf(boolean ignorePermissions) {
         if (Utils.apiIsAtLeast(30) && !ignorePermissions) {
-            if (requireContext().checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            if (requireContext().checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED || (Build.VERSION.SDK_INT >= 30 && !Environment.isExternalStorageManager())) {
                 SimpleAlertDialogFragment.newInstance(requireContext(), R.string.warning, R.string.installerx_thank_you_scoped_storage_very_cool).show(getChildFragmentManager(), DIALOG_TAG_Q_SAF_WARNING);
                 return;
             }
@@ -262,6 +263,8 @@ public class InstallerXDialogFragment extends BaseBottomSheetDialogFragment impl
                 mViewModel.setApkSourceUris(apkUris);
             }
         }
+
+        PermissionsUtils.handleManageStoragePerm(this, requestCode);
     }
 
     @Override
@@ -274,7 +277,7 @@ public class InstallerXDialogFragment extends BaseBottomSheetDialogFragment impl
         switch (dialogTag) {
             case DIALOG_TAG_Q_SAF_WARNING:
                 mActionAfterGettingStoragePermissions = PICK_WITH_SAF;
-                if (PermissionsUtils.checkAndRequestStoragePermissions(this)) {
+                if (PermissionsUtils.checkAndRequestStoragePermissions(this) && PermissionsUtils.requestManageStoragePerm(this)) {
                     pickFilesWithSaf(false);
                 }
                 break;

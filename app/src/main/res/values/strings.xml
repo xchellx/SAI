@@ -361,4 +361,8 @@
     <string name="about_translate_link" translatable="false">https://polychromaticfox.crowdin.com/split-apks-installer</string>
     <string name="about_privacy">Privacy Policy</string>
     <string name="about_eula">End User License Agreement</string>
+    <string name="settings_main_bypass_deprecated_sdk_installs">Bypass Deprecated SDK Installs (Shizuku or Root)</string>
+    <string name="settings_main_bypass_deprecated_sdk_installs_summary">Bypass the installer error \"INSTALL_FAILED_DEPRECATED_SDK_VERSION\" introduced in Android 14 which blocks installing apps that target SDK 24 and earlier. Requires Shizuku or root.</string>
+    <string name="settings_main_allow_downgrading">Allow Downgrading (Root)</string>
+    <string name="settings_main_allow_downgrading_summary">Allow installing an older version of an app over a already installed newer version. Requires root.</string>
 </resources>

@@ -211,7 +211,7 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Fil
     }
 
     private void openFilePicker(FilePickerDialogFragment filePicker) {
-        if (!PermissionsUtils.checkAndRequestStoragePermissions(this)) {
+        if (!PermissionsUtils.checkAndRequestStoragePermissions(this) || !PermissionsUtils.requestManageStoragePerm(this)) {
             mPendingFilePicker = filePicker;
             return;
         }
@@ -271,6 +271,13 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Fil
                 updateInstallerSummary();
             }
         }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        PermissionsUtils.handleManageStoragePerm(this, requestCode);
     }
 
     @Override

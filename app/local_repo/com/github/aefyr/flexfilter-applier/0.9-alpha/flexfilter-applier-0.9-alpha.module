@@ -1,0 +1,115 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.github.aefyr",
+    "module": "flexfilter-applier",
+    "version": "0.9-alpha",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "flexfilter-applier-0.9-alpha.aar",
+          "url": "flexfilter-applier-0.9-alpha.aar",
+          "size": 21795,
+          "sha512": "3183bf746045f01b8bc69a6481cd9715d87ab8b0e7c8f948eefe3ebd8646bb6736ac2aa9e821457a36f4db113e061f049199b2047afcc1ebd8867b2b14a8538f",
+          "sha256": "a277fee73b472cd674b771fb3aaa4739db0ac67175d816bda27d3b7ede22b0c2",
+          "sha1": "db018c357fb8cde5f2c0c3e2b019f5a81e5dba28",
+          "md5": "4bb36ba5b6200fbfa5e3e459a7716e89"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.github.aefyr",
+          "module": "flexfilter-config-core",
+          "version": {
+            "requires": "0.9-alpha"
+          }
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-extensions",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-common-java8",
+          "version": {
+            "requires": "2.1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "flexfilter-applier-0.9-alpha.aar",
+          "url": "flexfilter-applier-0.9-alpha.aar",
+          "size": 21795,
+          "sha512": "3183bf746045f01b8bc69a6481cd9715d87ab8b0e7c8f948eefe3ebd8646bb6736ac2aa9e821457a36f4db113e061f049199b2047afcc1ebd8867b2b14a8538f",
+          "sha256": "a277fee73b472cd674b771fb3aaa4739db0ac67175d816bda27d3b7ede22b0c2",
+          "sha1": "db018c357fb8cde5f2c0c3e2b019f5a81e5dba28",
+          "md5": "4bb36ba5b6200fbfa5e3e459a7716e89"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "flexfilter-applier-0.9-alpha-sources.jar",
+          "url": "flexfilter-applier-0.9-alpha-sources.jar",
+          "size": 4260,
+          "sha512": "0857cf77b76f7320c2e4b0e424406aecb5815c1bb50c96569727aeddcc0bc88fd27c98647b82426d5d03020218ed641ba3a8e94f1cbfaa956e90c2126a31188b",
+          "sha256": "b1b42611f686ff8c62f83d9ddfb760b5ffd55bf04c418eb703c536676f9718da",
+          "sha1": "f5f8bf9038d7d4e0816c4168be58c5a1a324684e",
+          "md5": "a870b166fdba512de7e0f205d261f7e2"
+        }
+      ]
+    }
+  ]
+}

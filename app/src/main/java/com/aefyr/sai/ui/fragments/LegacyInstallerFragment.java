@@ -113,7 +113,7 @@ public class LegacyInstallerFragment extends InstallerFragment implements FilePi
     }
 
     private void checkPermissionsAndPickFiles() {
-        if (!PermissionsUtils.checkAndRequestStoragePermissions(this))
+        if (!PermissionsUtils.checkAndRequestStoragePermissions(this) || !PermissionsUtils.requestManageStoragePerm(this))
             return;
 
         DialogProperties properties = new DialogProperties();
@@ -173,6 +173,8 @@ public class LegacyInstallerFragment extends InstallerFragment implements FilePi
                 mViewModel.installPackagesFromContentProviderUris(apkUris);
             }
         }
+
+        PermissionsUtils.handleManageStoragePerm(this, requestCode);
     }
 
     private void showPackageInstalledAlert(String packageName) {

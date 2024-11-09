@@ -3,15 +3,17 @@
 buildscript {
     repositories {
         google()
-        jcenter()
+        //jcenter()
+        mavenCentral()
+        //maven { url "https://repo.grails.org/grails/core/" }
         flatDir {
             dirs 'libs'
         }
     }
     dependencies {
-        classpath 'com.google.gms:google-services:4.3.5'
-        classpath 'com.android.tools.build:gradle:4.1.2'
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.4.1'
+        classpath 'com.google.gms:google-services:4.4.2'
+        classpath 'com.android.tools.build:gradle:8.2.2'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:3.0.2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -21,14 +23,17 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
-        maven { url "https://jitpack.io" }
-        maven {
+        //jcenter()
+        mavenCentral()
+        //maven { url "https://jitpack.io" }
+        //maven { url "https://repo.grails.org/grails/core/" }
+        /*maven {
             url 'https://dl.bintray.com/rikkaw/Libraries'
             content {
                 includeGroup "rikka.shizuku"
             }
-        }
+        }*/
+        maven { url "file://$projectDir/local_repo"  }
     }
 }
 

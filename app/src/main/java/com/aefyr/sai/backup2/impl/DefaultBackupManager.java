@@ -16,6 +16,7 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.WorkerThread;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
@@ -99,12 +100,12 @@ public class DefaultBackupManager implements BackupManager, BackupStorage.Observ
         packagesStuffIntentFilter.addAction(Intent.ACTION_PACKAGE_CHANGED);
         packagesStuffIntentFilter.addAction(Intent.ACTION_PACKAGE_REMOVED);
         packagesStuffIntentFilter.addDataScheme("package");
-        mContext.registerReceiver(new BroadcastReceiver() {
+        ContextCompat.registerReceiver(mContext, new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
                 updateAppInAppList(Objects.requireNonNull(intent.getData()).getSchemeSpecificPart());
             }
-        }, packagesStuffIntentFilter, null, mWorkerHandler);
+        }, packagesStuffIntentFilter, null, mWorkerHandler, ContextCompat.RECEIVER_EXPORTED);
 
         mWorkerHandler.post(this::fetchPackages);
 

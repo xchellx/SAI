@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.aefyr.sai.BuildConfig;
 import com.aefyr.sai.R;
 import com.aefyr.sai.adapters.SaiPiSessionsAdapter;
 import com.aefyr.sai.ui.dialogs.AppInstalledDialogFragment;
@@ -212,7 +214,7 @@ public class Installer2Fragment extends InstallerFragment implements FilePickerD
     }
 
     private void checkPermissionsAndPickFiles() {
-        if (!PermissionsUtils.checkAndRequestStoragePermissions(this))
+        if (!PermissionsUtils.checkAndRequestStoragePermissions(this) || !PermissionsUtils.requestManageStoragePerm(this))
             return;
 
         DialogProperties properties = new DialogProperties();
@@ -273,6 +275,8 @@ public class Installer2Fragment extends InstallerFragment implements FilePickerD
                 mViewModel.installPackagesFromContentProviderUris(apkUris);
             }
         }
+
+        PermissionsUtils.handleManageStoragePerm(this, requestCode);
     }
 
     private void showPackageInstalledAlert(String packageName) {

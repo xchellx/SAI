@@ -12,6 +12,7 @@ import android.os.HandlerThread;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 import com.aefyr.sai.installer2.base.model.SaiPiSessionParams;
 import com.aefyr.sai.installer2.base.model.SaiPiSessionState;
@@ -58,7 +59,7 @@ public class RootlessSaiPackageInstaller extends BaseSaiPackageInstaller impleme
 
         mBroadcastReceiver = new RootlessSaiPiBroadcastReceiver(getContext());
         mBroadcastReceiver.addEventObserver(this);
-        getContext().registerReceiver(mBroadcastReceiver, new IntentFilter(RootlessSaiPiBroadcastReceiver.ACTION_DELIVER_PI_EVENT), null, mWorkerHandler);
+        ContextCompat.registerReceiver(getContext(), mBroadcastReceiver, new IntentFilter(RootlessSaiPiBroadcastReceiver.ACTION_DELIVER_PI_EVENT), null, mWorkerHandler, ContextCompat.RECEIVER_EXPORTED);
 
         sInstance = this;
     }
@@ -98,7 +99,7 @@ public class RootlessSaiPackageInstaller extends BaseSaiPackageInstaller impleme
             }
 
             Intent callbackIntent = new Intent(RootlessSaiPiBroadcastReceiver.ACTION_DELIVER_PI_EVENT);
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(), 0, callbackIntent, 0);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(), 0, callbackIntent, PendingIntent.FLAG_MUTABLE);
             session.commit(pendingIntent.getIntentSender());
         } catch (Exception e) {
             Log.w(TAG, e);

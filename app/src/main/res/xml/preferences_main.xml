@@ -89,6 +89,18 @@
             android:title="@string/settings_main_use_zipfile"
             android:summary="@string/settings_main_use_zipfile_summary" />
 
+        <SwitchPreference
+            android:icon="@drawable/ic_pref_unarchive"
+            android:key="bypass_deprecated_sdk_installs"
+            android:title="@string/settings_main_bypass_deprecated_sdk_installs"
+            android:summary="@string/settings_main_bypass_deprecated_sdk_installs_summary" />
+
+        <SwitchPreference
+            android:icon="@drawable/ic_pref_unarchive"
+            android:key="allow_downgrading"
+            android:title="@string/settings_main_allow_downgrading"
+            android:summary="@string/settings_main_allow_downgrading_summary" />
+
         <Preference
             android:icon="@drawable/ic_pref_home"
             android:key="home_directory"

@@ -1,0 +1,152 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.github.aefyr",
+    "module": "flexfilter-builtin",
+    "version": "0.9-alpha",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "com.google.android.material",
+          "module": "material",
+          "version": {
+            "requires": "1.2.0-alpha04"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "flexfilter-builtin-0.9-alpha.aar",
+          "url": "flexfilter-builtin-0.9-alpha.aar",
+          "size": 50946,
+          "sha512": "1451241eba25a967ba7d81e77f977f1d71a5ad39892e2b07e0685323b980901ecf9ecabab88da3a8591baff604d1cd6a2ef10578d1cfddf995cbaf3fe5418c5f",
+          "sha256": "04bf2bfc1f0dd7d7da2192aa4b944bf52fc30aa5110bfc78dbb323341c797921",
+          "sha1": "5546e82ae18e8a715183fd290185af7d286785f2",
+          "md5": "3fe87a72acad6c3d9c672c042d4bfb48"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-extensions",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-common-java8",
+          "version": {
+            "requires": "2.1.0"
+          }
+        },
+        {
+          "group": "androidx.recyclerview",
+          "module": "recyclerview",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "com.google.android.flexbox",
+          "module": "flexbox",
+          "version": {
+            "requires": "3.0.0"
+          }
+        },
+        {
+          "group": "com.github.aefyr",
+          "module": "flexfilter-config-core",
+          "version": {
+            "requires": "0.9-alpha"
+          }
+        },
+        {
+          "group": "com.github.aefyr",
+          "module": "flexfilter-applier",
+          "version": {
+            "requires": "0.9-alpha"
+          }
+        },
+        {
+          "group": "com.github.aefyr",
+          "module": "flexfilter-config-ui",
+          "version": {
+            "requires": "0.9-alpha"
+          }
+        },
+        {
+          "group": "com.google.android.material",
+          "module": "material",
+          "version": {
+            "requires": "1.2.0-alpha04"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "flexfilter-builtin-0.9-alpha.aar",
+          "url": "flexfilter-builtin-0.9-alpha.aar",
+          "size": 50946,
+          "sha512": "1451241eba25a967ba7d81e77f977f1d71a5ad39892e2b07e0685323b980901ecf9ecabab88da3a8591baff604d1cd6a2ef10578d1cfddf995cbaf3fe5418c5f",
+          "sha256": "04bf2bfc1f0dd7d7da2192aa4b944bf52fc30aa5110bfc78dbb323341c797921",
+          "sha1": "5546e82ae18e8a715183fd290185af7d286785f2",
+          "md5": "3fe87a72acad6c3d9c672c042d4bfb48"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "flexfilter-builtin-0.9-alpha-sources.jar",
+          "url": "flexfilter-builtin-0.9-alpha-sources.jar",
+          "size": 11176,
+          "sha512": "5489df3f50a65b7a0731b882ebc170a2d963587c0be1aa080ecf0b7f8d0fcacf6c5007a5b0be64217d267869c4c5e51e0fb6973386962603d1ce4f51f88525f4",
+          "sha256": "d8d3aa1a31ea0506305fe5288d54c76597732033762bc407e8116270e46f0aac",
+          "sha1": "ae502029f183207f4ef4eb59bf5632a8c16da144",
+          "md5": "d5159dc658d1f2cac01bd0e9dd8626cd"
+        }
+      ]
+    }
+  ]
+}
